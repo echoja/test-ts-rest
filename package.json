@@ -4,9 +4,30 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "tsup --config tsup.dev.config.ts --onSuccess \"node --enable-source-maps ./dist/index.js\"",
+    "build": "yarn typecheck && tsup --config tsup.prod.config.ts",
+    "start": "node --enable-source-maps ./dist/index.js"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@anatine/zod-openapi": "^2.2.5",
+    "@ts-rest/core": "^3.45.2",
+    "@ts-rest/express": "^3.45.2",
+    "@ts-rest/open-api": "^3.45.2",
+    "body-parser": "^1.20.2",
+    "express": "^4.19.2",
+    "swagger-ui-express": "^5.0.0",
+    "tsup": "^8.0.2",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/body-parser": "^1.19.5",
+    "@types/express": "^4.17.21",
+    "@types/swagger-ui-express": "^4.1.6",
+    "openapi3-ts": "^4.3.2",
+    "typescript": "^5.4.5"
+  }
 }
