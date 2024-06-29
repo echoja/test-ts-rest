@@ -17,7 +17,7 @@ export const contract = c.router({
         description: "The number of items to return",
         example: 10,
       }),
-    }),
+    }), // 호우
     headers: z.object({
       "Authorization": z.string(),
     }),
